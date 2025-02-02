@@ -1,10 +1,10 @@
 package dao;
 
 //import edu javacourse, studentorder, domain. Stre
-import entity.student;
+import entity.database;
 import java.sql.*;
-import java.util.LinkedList; import java.util. List;
-public class shange_student {
+
+public class shange_Aparat {
 
 
     private Connection getConnection() throws  SQLException{
@@ -25,7 +25,7 @@ public class shange_student {
                 st.setAge(rs.getLong(2));
                 st.setKlass(rs.getLong(3));
                 st.setFamiliya(rs.getString(4));
-                st.setName_(rs.getString(5));
+                st.setName_Aparat(rs.getString(5));
                 st.setOtchestvo(rs.getString(6));
                  result.add(st);
             }
@@ -47,21 +47,21 @@ public class shange_student {
         return null;
     }
 
-    public int createstudent(student student) {
+    public int createstudent(database database) {
         try {////блок кода, в котором может произойти исключение
             String sql = "INSERT INTO public.\"Aparat\"(\n" +
                     "\t\"Siral_number\", \"Name\", registr_number, invent_number, \"Otdelenie\", data_input, \"Na_spisanie\", \"Act_spisanie\", \"Gurnal_TO\")\n" +
                     "\tVALUES (?, ?, ?, ?, ?, ?, ?, ?, ?);";
             PreparedStatement statement = getConnection().prepareStatement(sql);
-            statement.setString(1, student.getSiral_number());
-            statement.setString(2, student.getName_());
-            statement.setString(3, student.getRegistr_number());
-            statement.setString(4, student.getInvent_number());
-            statement.setString(5, student.getOtdelenie());
-            statement.setDate(6, student.getData_input());
-            statement.setBoolean(7,student.getNa_spisanie());
-            statement.setString(8, student.getAct_spisanie());
-            statement.setString(9, student.getGurnal_TO());
+            statement.setString(1, database.getSiral_number_Aparat());
+            statement.setString(2, database.getName_Aparat());
+            statement.setString(3, database.getRegistr_number_Aparat());
+            statement.setString(4, database.getInvent_number_Aparat());
+            statement.setString(5, database.getOtdelenie_Aparat());
+            statement.setDate(6, database.getData_input_Aparat());
+            statement.setBoolean(7, database.getNa_spisanie_Aparat());
+            statement.setString(8, database.getAct_spisanie_Aparat());
+            statement.setString(9, database.getGurnal_TO_Aparat());
             int i = statement.executeUpdate();
             System.out.println("Добавлено строк " + i);
             return i;
@@ -70,7 +70,7 @@ public class shange_student {
         return 0;
     } // Добавление
 
-    public int updateStudent(student student) {
+    public int updateStudent(database database) {
         try {
             /*Connection con = getConnection();
         Statement stmt = con.createStatement();*/
@@ -79,16 +79,16 @@ public class shange_student {
                     "\tSET \"Siral_number\"=?, \"Name\"=?, registr_number=?, invent_number=?, \"Otdelenie\"=?, data_input=?, \"Na_spisanie\"=?, \"Act_spisanie\"=?, \"Gurnal_TO\"=?\n" +
                     "\tWHERE \"Siral_number\"=?;";
             PreparedStatement statement = getConnection().prepareStatement(sqlUpdate);
-            statement.setString(1, student.getSiral_number());
-            statement.setString(2, student.getName_());
-            statement.setString(3, student.getRegistr_number());
-            statement.setString(4, student.getInvent_number());
-            statement.setString(5, student.getOtdelenie());
-            statement.setDate(6, student.getData_input());
-            statement.setBoolean(7,student.getNa_spisanie());
-            statement.setString(8, student.getAct_spisanie());
-            statement.setString(9, student.getGurnal_TO());
-            statement.setString(10, student.getWhere());
+            statement.setString(1, database.getSiral_number_Aparat());
+            statement.setString(2, database.getName_Aparat());
+            statement.setString(3, database.getRegistr_number_Aparat());
+            statement.setString(4, database.getInvent_number_Aparat());
+            statement.setString(5, database.getOtdelenie_Aparat());
+            statement.setDate(6, database.getData_input_Aparat());
+            statement.setBoolean(7, database.getNa_spisanie_Aparat());
+            statement.setString(8, database.getAct_spisanie_Aparat());
+            statement.setString(9, database.getGurnal_TO_Aparat());
+            statement.setString(10, database.getWhere_Aparat());
 
             int i =  statement.executeUpdate();
             System.out.println("Обновлено строк " + i);
@@ -97,7 +97,7 @@ public class shange_student {
         return 0;
     }
 
-        public int deletStudent(student student) {
+        public int deletStudent(database database) {
             try
             {Connection con = getConnection();
                 Statement stmt = con.createStatement();
@@ -105,7 +105,7 @@ public class shange_student {
                 String sqlUpdate="DELETE FROM public.\"Aparat\"\n" +
                         "\tWHERE \"Siral_number\"=?;";
                 PreparedStatement statement = getConnection().prepareStatement(sqlUpdate);
-                statement.setString(1, student.getWhere());
+                statement.setString(1, database.getWhere_Aparat());
                 int i =  statement.executeUpdate();
                 System.out.println("удолено строк строк " + i);
 

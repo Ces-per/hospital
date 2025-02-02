@@ -1,5 +1,7 @@
-import dao.shange_student;
-import entity.student;
+package button.Aparat;
+
+import dao.shange_Aparat;
+import entity.database;
 
 import javax.swing.*;
 import java.awt.*;
@@ -112,17 +114,17 @@ public class button {
         JButton add = new JButton("Добавить");
         add.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                student st = new student();
-                st.setSiral_number(Siral_field.getText());
-                st.setName_(name_field.getText());
-                st.setRegistr_number(Registr_field.getText());
-                st.setInvent_number(Invent_field.getText());
-                st.setOtdelenie(Otdelenie_field.getText());
-                st.setData_input(Date.valueOf(Data_input_field.getText()));
-                st.setNa_spisanie(Boolean.valueOf("false"));
-                st.setAct_spisanie(Act_spisanie_field.getText());
-                st.setGurnal_TO(Gurnal_TO_field.getText());
-                new shange_student().createstudent(st);
+                database st = new database();
+                st.setSiral_number_Aparat(Siral_field.getText());
+                st.setName_Aparat(name_field.getText());
+                st.setRegistr_number_Aparat(Registr_field.getText());
+                st.setInvent_number_Aparat(Invent_field.getText());
+                st.setOtdelenie_Aparat(Otdelenie_field.getText());
+                st.setData_input_Aparat(Date.valueOf(Data_input_field.getText()));
+                st.setNa_spisanie_Aparat(Boolean.valueOf("false"));
+                st.setAct_spisanie_Aparat(Act_spisanie_field.getText());
+                st.setGurnal_TO_Aparat(Gurnal_TO_field.getText());
+                new shange_Aparat().createstudent(st);
             }
         });
 

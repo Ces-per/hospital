@@ -13,7 +13,7 @@ public class LIBRARY_WINDOW extends  JFrame{
         shange_student sh = new shange_student();
         List<student> studentList = sh.findStreets("");
       //  sh.UpdateStudent(studentList.get(0));
-        studentList.forEach(st-> System.out.println(st.getName_()+ st.getId() + st.getAge()+ st.getKlass()));
+        studentList.forEach(st-> System.out.println(st.getName_Aparat()+ st.getId() + st.getAge()+ st.getKlass()));
 
         Long[] data1 =  studentList
                 .stream()
@@ -41,7 +41,7 @@ public class LIBRARY_WINDOW extends  JFrame{
 
         String[] data5 =  studentList
                 .stream()
-                .map(s->s.getName_())
+                .map(s->s.getName_Aparat())
                 .collect(Collectors.toList())
                 .toArray(new String[studentList.size()]);
 

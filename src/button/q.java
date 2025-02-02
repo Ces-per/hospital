@@ -1,6 +1,7 @@
-/**
- * Тестовый класс создания диалоговых окон
- */
+
+/*
+
+package button;
 import javax.swing.*;
 import java.awt.event.*;
 
@@ -16,9 +17,9 @@ public class q extends JFrame
         button1.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
 
-               /* Box contents = new Box(BoxLayout.X_AXIS);
+                Box contents = new Box(BoxLayout.X_AXIS);
                 Table.Table t = new Table.Table();
-                t.show(contents);*/
+                t.show(contents);
 
             }
         });
@@ -59,10 +60,7 @@ public class q extends JFrame
         setSize(350, 100);
         setVisible(true);
     }
-    /** Функция создания диалогового окна.
-     * @param title - заголовок окна
-     * @param modal - флаг модальности
-     */
+
     private JDialog createDialog(String title, boolean modal)
     {
         JDialog dialog = new JDialog(this, title, modal);
@@ -75,4 +73,4 @@ public class q extends JFrame
     {
         new q();
     }
-}
+}*/

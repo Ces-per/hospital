@@ -1,5 +1,7 @@
-import dao.shange_student;
-import entity.student;
+package button.Aparat;
+
+import dao.shange_Aparat;
+import entity.database;
 
 import javax.swing.*;
 import java.awt.*;
@@ -31,9 +33,9 @@ public class delet_button {
         JButton up = new JButton("Удалить");
         up.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                student st = new student();
-                st.setWhere(String.valueOf(where_field.getText()));
-                int i = new shange_student().deletStudent(st);
+                database st = new database();
+                st.setWhere_Aparat(String.valueOf(where_field.getText()));
+                int i = new shange_Aparat().deletStudent(st);
             }
         });
 

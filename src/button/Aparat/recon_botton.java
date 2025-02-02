@@ -1,5 +1,7 @@
+package button.Aparat;
+
 import dao.Converter;
-import dao.shange_student;
+import dao.shange_Aparat;
 
 import javax.swing.*;
 import java.sql.SQLException;
@@ -9,7 +11,7 @@ public class recon_botton {
     public void show(Box contents){
 
 
-        shange_student sh = new shange_student();
+        shange_Aparat sh = new shange_Aparat();
         JTable table1 = null;
         try {
             table1 = new JTable(Converter.buildTableModel(sh.selctstudent()));

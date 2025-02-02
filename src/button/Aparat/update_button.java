@@ -1,5 +1,7 @@
-import dao.shange_student;
-import entity.student;
+package button.Aparat;
+
+import dao.shange_Aparat;
+import entity.database;
 
 import javax.swing.*;
 import java.awt.*;
@@ -122,19 +124,19 @@ public class update_button {
         JButton up = new JButton("Обнавить");
         up.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                student st = new student();
-                st.setSiral_number(Siral_field.getText());
-                st.setName_(name_field.getText());
-                st.setRegistr_number(Registr_field.getText());
-                st.setInvent_number(Invent_field.getText());
-                st.setOtdelenie(Otdelenie_field.getText());
-                st.setData_input(Date.valueOf(Data_input_field.getText()));
-                st.setNa_spisanie(Boolean.valueOf(Na_spisanie_field.getText()));
-                st.setAct_spisanie(Act_spisanie_field.getText());
-                st.setGurnal_TO(Gurnal_TO_field.getText());
-                st.setWhere(String.valueOf(where_field.getText()));
+                database st = new database();
+                st.setSiral_number_Aparat(Siral_field.getText());
+                st.setName_Aparat(name_field.getText());
+                st.setRegistr_number_Aparat(Registr_field.getText());
+                st.setInvent_number_Aparat(Invent_field.getText());
+                st.setOtdelenie_Aparat(Otdelenie_field.getText());
+                st.setData_input_Aparat(Date.valueOf(Data_input_field.getText()));
+                st.setNa_spisanie_Aparat(Boolean.valueOf(Na_spisanie_field.getText()));
+                st.setAct_spisanie_Aparat(Act_spisanie_field.getText());
+                st.setGurnal_TO_Aparat(Gurnal_TO_field.getText());
+                st.setWhere_Aparat(String.valueOf(where_field.getText()));
 
-                int i = new shange_student().updateStudent(st);
+                int i = new shange_Aparat().updateStudent(st);
                 System.out.println(i);
             }
         });

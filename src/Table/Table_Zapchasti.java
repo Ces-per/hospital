@@ -1,7 +1,11 @@
 package Table;
 //import com.sun.org.apache.xpath.internal.functions.FuncFalse;
 import dao.Converter;
-import dao.shange_student;
+import dao.shange_Aparat;
+
+import button.Aparat.button;
+import button.Aparat.delet_button;
+import button.Aparat.update_button;
 
 import javax.swing.*;
 
@@ -11,19 +15,19 @@ import java.awt.event.ActionListener;
 
 import java.sql.*;
 
-public class Table extends JFrame{
-    public Table() throws SQLException{
+public class Table_Zapchasti extends JFrame{
+    public Table_Zapchasti() throws SQLException{
         //Создание окна
-        super("Апараты");
+        super("Запчясти");
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         //Подключение к базе данных и получение результсета таблицы
 
         Connection con = DriverManager.getConnection("jdbc:postgresql://127.0.0.1:5432/postgres", "postgres", "1");
         Statement stmt = con.createStatement();
-        ResultSet rs = stmt.executeQuery("SELECT \"Siral_number\", \"Name\", registr_number, invent_number, \"Otdelenie\", data_input, \"Na_spisanie\", \"Act_spisanie\", \"Gurnal_TO\"\n" +
-                "\tFROM public.\"Aparat\";");
+        ResultSet rs = stmt.executeQuery("SELECT id, \"Kod\", \"Name\", characteristics, photo\n" +
+                "\tFROM public.\"Zapchasti\";");
         //Создание таблицы и помещение в блок данных
-        shange_student sh = new shange_student();
+        shange_Aparat sh = new shange_Aparat();
         JTable table = new  JTable(Converter.buildTableModel(rs));
         table.setColumnSelectionAllowed(false);
         table.setRowSelectionAllowed(true);
@@ -74,7 +78,7 @@ public class Table extends JFrame{
 
         recon.addActionListener(new ActionListener() {
             @Override
-            public void actionPerformed(ActionEvent e) {
+            public void actionPerformed(ActionEvent e) {/*
 
 
                 //setVisible(false);
@@ -109,7 +113,7 @@ public class Table extends JFrame{
 
                 setVisible(true);
 
-            }
+            */}
         });
 
 
@@ -120,18 +124,18 @@ public class Table extends JFrame{
         Buttons.add(change);
         Buttons.add(delet);
         Buttons.add(recon);
-        
+
         //Оформление окна(добавление в него блока с таблице и панели кнопок, задача размера)
         getContentPane().add(contents);
         getContentPane().add(Buttons, BorderLayout.NORTH);
-        setSize(1100,500);
+        setSize(800,400);
         setVisible(true);
 
 
     }
     public static void main(String[] args) throws Exception {
         //Запуск конструктора класса, образующего окно
-        new Table();
+        new Table_Zapchasti();
     }
 }
 // добавтиь кнопку для повторнрого получения даных из таблици
