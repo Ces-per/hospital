@@ -16,10 +16,10 @@ import java.awt.event.ActionListener;
 import java.sql.*;
 
 public class Table_Aparat extends JFrame{
-    public Table_Aparat() throws SQLException{
+    public void Table_Aparat(JFrame frame) throws SQLException{
         //Создание окна
-        super("Апараты");
-        setDefaultCloseOperation(EXIT_ON_CLOSE);
+        //super("Апараты");
+        //setDefaultCloseOperation(EXIT_ON_CLOSE);
         //Подключение к базе данных и получение результсета таблицы
 
         Connection con = DriverManager.getConnection("jdbc:postgresql://127.0.0.1:5432/postgres", "postgres", "1");

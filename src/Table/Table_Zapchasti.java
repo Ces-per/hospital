@@ -16,10 +16,10 @@ import java.awt.event.ActionListener;
 import java.sql.*;
 
 public class Table_Zapchasti extends JFrame{
-    public Table_Zapchasti() throws SQLException{
+    public void Table_Zapchasti(JFrame frame) throws SQLException{
         //Создание окна
-        super("Запчясти");
-        setDefaultCloseOperation(EXIT_ON_CLOSE);
+        //super("Запчясти");
+        //setDefaultCloseOperation(EXIT_ON_CLOSE);
         //Подключение к базе данных и получение результсета таблицы
 
         Connection con = DriverManager.getConnection("jdbc:postgresql://127.0.0.1:5432/postgres", "postgres", "1");
@@ -127,7 +127,7 @@ public class Table_Zapchasti extends JFrame{
 
         //Оформление окна(добавление в него блока с таблице и панели кнопок, задача размера)
         getContentPane().add(contents);
-        getContentPane().add(Buttons, BorderLayout.NORTH);
+        getContentPane().add(Buttons, BorderLayout.EAST, BoxLayout.Y_AXIS);
         setSize(800,400);
         setVisible(true);
 
