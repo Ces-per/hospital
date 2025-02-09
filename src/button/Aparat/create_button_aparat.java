@@ -11,7 +11,7 @@ import java.sql.Date;
 
 //import static com.sun.glass.ui.Cursor.setVisible;
 
-public class button {
+public class create_button_aparat {
 
     public void show(JFrame frame) {
 

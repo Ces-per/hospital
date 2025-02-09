@@ -9,7 +9,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.Date;
 
-public class update_button {
+public class update_button_aparat {
     public void show(JFrame frame) {
 
         JPanel windowContent = new JPanel();

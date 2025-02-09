@@ -28,6 +28,7 @@ public class database {
     private String Characteristics_Zapchasti;
     private String Photo_Zapchasti;
     private String Id_Zapchasti;
+    private String Where_Zapchasti;
 
 
     /*public Long getId() {
@@ -135,6 +136,10 @@ public class database {
     public String getId_Zapchasti() {return Id_Zapchasti;}
     public void setId_Zapchasti(String id_Zapchasti) {
         Id_Zapchasti = id_Zapchasti;}
+
+    public String getWhere_Zapchasti() {return Where_Zapchasti;}
+    public void setWhere_Zapchasti(String where_Zapchasti) {
+        Where_Zapchasti = where_Zapchasti;}
 
 
 

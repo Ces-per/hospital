@@ -8,7 +8,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class delet_button {
+public class delet_button_aparat {
     public void show(JFrame frame) {
 
         JPanel windowContent = new JPanel();

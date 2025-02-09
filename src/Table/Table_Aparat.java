@@ -3,9 +3,9 @@ package Table;
 import dao.Converter;
 import dao.shange_Aparat;
 
-import button.Aparat.button;
-import button.Aparat.delet_button;
-import button.Aparat.update_button;
+import button.Aparat.create_button_aparat;
+import button.Aparat.delet_button_aparat;
+import button.Aparat.update_button_aparat;
 
 import javax.swing.*;
 
@@ -45,7 +45,7 @@ public class Table_Aparat extends JFrame{
             public void actionPerformed(ActionEvent e) {
 
                 JFrame frame = new JFrame("табличка ученики");
-                button b = new button();
+                create_button_aparat b = new create_button_aparat();
                 b.show(frame);
 
             }
@@ -57,7 +57,7 @@ public class Table_Aparat extends JFrame{
             public void actionPerformed(ActionEvent e) {
 
                 JFrame uframe = new JFrame("изменить учеников");
-                update_button ub = new update_button();
+                update_button_aparat ub = new update_button_aparat();
                 ub.show(uframe);
             }
         });
@@ -68,7 +68,7 @@ public class Table_Aparat extends JFrame{
             public void actionPerformed(ActionEvent e) {
 
                 JFrame dframe = new JFrame("удалить учеников");
-                delet_button db = new delet_button();
+                delet_button_aparat db = new delet_button_aparat();
                 db.show(dframe);
 
             }

@@ -1,11 +1,11 @@
 package Table;
 //import com.sun.org.apache.xpath.internal.functions.FuncFalse;
 import dao.Converter;
-import dao.shange_Aparat;
+import dao.shange_Zapchasti;
 
-import button.Aparat.button;
-import button.Aparat.delet_button;
-import button.Aparat.update_button;
+import button.Zapchasti.create_button_Zapchasti;
+import button.Zapchasti.delet_button_Zapchasti;
+import button.Zapchasti.update_button_Zapchasti;
 
 import javax.swing.*;
 
@@ -27,7 +27,7 @@ public class Table_Zapchasti extends JFrame{
         ResultSet rs = stmt.executeQuery("SELECT id, \"Kod\", \"Name\", characteristics, photo\n" +
                 "\tFROM public.\"Zapchasti\";");
         //Создание таблицы и помещение в блок данных
-        shange_Aparat sh = new shange_Aparat();
+        shange_Zapchasti sh = new shange_Zapchasti();
         JTable table = new  JTable(Converter.buildTableModel(rs));
         table.setColumnSelectionAllowed(false);
         table.setRowSelectionAllowed(true);
@@ -45,7 +45,7 @@ public class Table_Zapchasti extends JFrame{
             public void actionPerformed(ActionEvent e) {
 
                 JFrame frame = new JFrame("табличка ученики");
-                button b = new button();
+                create_button_Zapchasti b = new create_button_Zapchasti();
                 b.show(frame);
 
             }
@@ -57,7 +57,7 @@ public class Table_Zapchasti extends JFrame{
             public void actionPerformed(ActionEvent e) {
 
                 JFrame uframe = new JFrame("изменить учеников");
-                update_button ub = new update_button();
+                update_button_Zapchasti ub = new update_button_Zapchasti();
                 ub.show(uframe);
             }
         });
@@ -68,7 +68,7 @@ public class Table_Zapchasti extends JFrame{
             public void actionPerformed(ActionEvent e) {
 
                 JFrame dframe = new JFrame("удалить учеников");
-                delet_button db = new delet_button();
+                delet_button_Zapchasti db = new delet_button_Zapchasti();
                 db.show(dframe);
 
             }

@@ -35,7 +35,7 @@ public class shange_Zapchasti {
             return result;
     } // Вывод*/
 
-    public ResultSet selctstudent(){
+    /*public ResultSet selctstudent(){
         try{
             Connection con = getConnection();
             Statement stmt = con.createStatement();
@@ -45,23 +45,23 @@ public class shange_Zapchasti {
         }
         catch (Exception e){}
         return null;
-    }
+    }*/
 
-    public int createstudent(database database) {
+    public int createZapchasti(database database) {
         try {////блок кода, в котором может произойти исключение
             String sql = "INSERT INTO public.\"Zapchasti\"(\n" +
                     "\t\"Kod\", \"Name\", characteristics, photo, id)\n" +
                     "\tVALUES (?, ?, ?, ?, ?);";
             PreparedStatement statement = getConnection().prepareStatement(sql);
-            statement.setString(1, database.getSiral_number_Aparat());
-            statement.setString(2, database.getName_Aparat());
-            statement.setString(3, database.getRegistr_number_Aparat());
-            statement.setString(4, database.getInvent_number_Aparat());
-            statement.setString(5, database.getOtdelenie_Aparat());
-            statement.setDate(6, database.getData_input_Aparat());
+            statement.setString(1, database.getKod_Zapchasti());
+            statement.setString(2, database.getName_Zapchasti());
+            statement.setString(3, database.getCharacteristics_Zapchasti());
+            statement.setString(4, database.getPhoto_Zapchasti());
+            statement.setString(5, database.getId_Zapchasti());
+            /*statement.setDate(6, database.getData_input_Aparat());
             statement.setBoolean(7, database.getNa_spisanie_Aparat());
             statement.setString(8, database.getAct_spisanie_Aparat());
-            statement.setString(9, database.getGurnal_TO_Aparat());
+            statement.setString(9, database.getGurnal_TO_Aparat());*/
             int i = statement.executeUpdate();
             System.out.println("Добавлено строк " + i);
             return i;
@@ -70,25 +70,20 @@ public class shange_Zapchasti {
         return 0;
     } // Добавление
 
-    public int updateStudent(database database) {
+    public int updateZapchasti(database database) {
         try {
             /*Connection con = getConnection();
         Statement stmt = con.createStatement();*/
 
-            String sqlUpdate="UPDATE public.\"Aparat\"\n" +
-                    "\tSET \"Siral_number\"=?, \"Name\"=?, registr_number=?, invent_number=?, \"Otdelenie\"=?, data_input=?, \"Na_spisanie\"=?, \"Act_spisanie\"=?, \"Gurnal_TO\"=?\n" +
-                    "\tWHERE \"Siral_number\"=?;";
+            String sqlUpdate="UPDATE public.\"Zapchasti\"\n" +
+                    "\tSET \"Kod\"=?, \"Name\"=?, characteristics=?, photo=?, id=?\n" +
+                    "\tWHERE id=?;";
             PreparedStatement statement = getConnection().prepareStatement(sqlUpdate);
-            statement.setString(1, database.getSiral_number_Aparat());
-            statement.setString(2, database.getName_Aparat());
-            statement.setString(3, database.getRegistr_number_Aparat());
-            statement.setString(4, database.getInvent_number_Aparat());
-            statement.setString(5, database.getOtdelenie_Aparat());
-            statement.setDate(6, database.getData_input_Aparat());
-            statement.setBoolean(7, database.getNa_spisanie_Aparat());
-            statement.setString(8, database.getAct_spisanie_Aparat());
-            statement.setString(9, database.getGurnal_TO_Aparat());
-            statement.setString(10, database.getWhere_Aparat());
+            statement.setString(1, database.getKod_Zapchasti());
+            statement.setString(2, database.getName_Zapchasti());
+            statement.setString(3, database.getCharacteristics_Zapchasti());
+            statement.setString(4, database.getPhoto_Zapchasti());
+            statement.setString(5, database.getId_Zapchasti());
 
             int i =  statement.executeUpdate();
             System.out.println("Обновлено строк " + i);
@@ -97,15 +92,15 @@ public class shange_Zapchasti {
         return 0;
     }
 
-    public int deletStudent(database database) {
+    public int deletZapchasti(database database) {
         try
         {Connection con = getConnection();
             Statement stmt = con.createStatement();
 
-            String sqlUpdate="DELETE FROM public.\"Aparat\"\n" +
-                    "\tWHERE \"Siral_number\"=?;";
+            String sqlUpdate="DELETE FROM public.\"Zapchasti\"\n" +
+                    "\tWHERE id=?;";
             PreparedStatement statement = getConnection().prepareStatement(sqlUpdate);
-            statement.setString(1, database.getWhere_Aparat());
+            statement.setString(1, database.getWhere_Zapchasti());
             int i =  statement.executeUpdate();
             System.out.println("удолено строк строк " + i);
 

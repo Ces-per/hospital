@@ -3,12 +3,8 @@
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$/src/Nachalo.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/Table/Table_Aparat.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/Table/Table_Aparat.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/Table/Table_Zapchasti.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/button/Aparat/button.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/button/Aparat/button.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/button/Aparat/button.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/button/q.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/button/Aparat/create_button_aparat.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/button/q.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/dao/shange_Zapchasti.java" charset="UTF-8" />
     <file url="PROJECT" charset="windows-1251" />

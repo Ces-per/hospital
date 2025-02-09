@@ -1,4 +1,4 @@
-package button.Aparat;
+package button.Zapchasti;
 
 import dao.Converter;
 import dao.shange_Aparat;
@@ -7,7 +7,7 @@ import javax.swing.*;
 import java.sql.SQLException;
 
 
-public class recon_botton {
+public class recon_botton_Zapchasti {
     public void show(Box contents){
 
 
