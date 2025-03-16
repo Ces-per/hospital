@@ -4,7 +4,7 @@ package dao;
 import entity.database;
 import java.sql.*;
 
-public class shange_Zapchasti {
+public class shange_Otdelenie {
 
 
     private Connection getConnection() throws  SQLException{
@@ -18,7 +18,7 @@ public class shange_Zapchasti {
 
         Statement stmt = con.createStatement();
         ResultSet rs = stmt.executeQuery("SELECT *\n" +
-                "\tFROM public.\"СѓС‡РµРЅРёРєРё\";");
+                "\tFROM public.\"ученики\";");
             while (rs.next()){
                 student st = new student();
                 st.setId(rs.getLong(1));
@@ -33,7 +33,7 @@ public class shange_Zapchasti {
         }
         catch (Exception e){}
             return result;
-    } // Р’С‹РІРѕРґ*/
+    } // Вывод*/
 
     /*public ResultSet selctstudent(){
         try{
@@ -47,63 +47,54 @@ public class shange_Zapchasti {
         return null;
     }*/
 
-    public int createZapchasti(database database) {
-        try {////Р±Р»РѕРє РєРѕРґР°, РІ РєРѕС‚РѕСЂРѕРј РјРѕР¶РµС‚ РїСЂРѕРёР·РѕР№С‚Рё РёСЃРєР»СЋС‡РµРЅРёРµ
-            String sql = "INSERT INTO public.\"Zapchasti\"(\n" +
-                    "\t\"Kod\", \"Name\", characteristics, photo, id)\n" +
-                    "\tVALUES (?, ?, ?, ?, ?);";
+    public int createOtdelenie(database database) {
+        try {////блок кода, в котором может произойти исключение
+            String sql = "INSERT INTO public.\"Otdelenie\"(\n" +
+                    "\t\"Kod\", \"Name\")\n" +
+                    "\tVALUES (?, ?);";
             PreparedStatement statement = getConnection().prepareStatement(sql);
-            statement.setString(1, database.getKod_Zapchasti());
-            statement.setString(2, database.getName_Zapchasti());
-            statement.setString(3, database.getCharacteristics_Zapchasti());
-            statement.setString(4, database.getPhoto_Zapchasti());
-            statement.setString(5, database.getId_Zapchasti());
-            /*statement.setDate(6, database.getData_input_Aparat());
-            statement.setBoolean(7, database.getNa_spisanie_Aparat());
-            statement.setString(8, database.getAct_spisanie_Aparat());
-            statement.setString(9, database.getGurnal_TO_Aparat());*/
+            statement.setString(1, database.getKod_Otdelenie());
+            statement.setString(2, database.getName_Otdelenie());
+
             int i = statement.executeUpdate();
-            System.out.println("Р”РѕР±Р°РІР»РµРЅРѕ СЃС‚СЂРѕРє " + i);
+            System.out.println("Добавлено строк " + i);
             return i;
         }
         catch (Exception e){}
         return 0;
-    } // Р”РѕР±Р°РІР»РµРЅРёРµ
+    } // Добавление
 
-    public int updateZapchasti(database database) {
+    public int updateOtdelenie(database database) {
         try {
             /*Connection con = getConnection();
         Statement stmt = con.createStatement();*/
 
-            String sqlUpdate="UPDATE public.\"Zapchasti\"\n" +
-                    "\tSET \"Kod\"=?, \"Name\"=?, characteristics=?, photo=?, id=?\n" +
-                    "\tWHERE id=?;";
+            String sqlUpdate="UPDATE public.\"Otdelenie\"\n" +
+                    "\tSET \"Kod\"=?, \"Name\"=?\n" +
+                    "\tWHERE \"Kod\"=?;";
             PreparedStatement statement = getConnection().prepareStatement(sqlUpdate);
-            statement.setString(1, database.getKod_Zapchasti());
-            statement.setString(2, database.getName_Zapchasti());
-            statement.setString(3, database.getCharacteristics_Zapchasti());
-            statement.setString(4, database.getPhoto_Zapchasti());
-            statement.setString(5, database.getId_Zapchasti());
-            statement.setString(6,database.getWhere_Zapchasti());
+            statement.setString(1, database.getKod_Otdelenie());
+            statement.setString(2, database.getName_Otdelenie());
+            statement.setString(3,database.getWhere_Otdelenie());
 
             int i =  statement.executeUpdate();
-            System.out.println("РћР±РЅРѕРІР»РµРЅРѕ СЃС‚СЂРѕРє " + i);
+            System.out.println("Обновлено строк " + i);
 
         } catch (Exception e){}
         return 0;
     }
 
-    public int deletZapchasti(database database) {
+    public int deletOtdelenie(database database) {
         try
         {Connection con = getConnection();
             Statement stmt = con.createStatement();
 
-            String sqlUpdate="DELETE FROM public.\"Zapchasti\"\n" +
-                    "\tWHERE id=?;";
+            String sqlUpdate="DELETE FROM public.\"Otdelenie\"\n" +
+                    "\tWHERE \"Kod\"=?;";
             PreparedStatement statement = getConnection().prepareStatement(sqlUpdate);
-            statement.setString(1, database.getWhere_Zapchasti());
+            statement.setString(1, database.getWhere_Otdelenie());
             int i =  statement.executeUpdate();
-            System.out.println("СѓРґРѕР»РµРЅРѕ СЃС‚СЂРѕРє СЃС‚СЂРѕРє " + i);
+            System.out.println("удолено строк строк " + i);
 
         } catch (Exception e){}
         return 0;

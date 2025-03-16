@@ -44,7 +44,7 @@ public class Table_Aparat extends JFrame{
             @Override
             public void actionPerformed(ActionEvent e) {
 
-                JFrame frame = new JFrame("табличка ученики");
+                JFrame frame = new JFrame("добавить ученика");
                 create_button_aparat b = new create_button_aparat();
                 b.show(frame);
 

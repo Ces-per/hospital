@@ -29,6 +29,10 @@ public class database {
     private String Photo_Zapchasti;
     private String Id_Zapchasti;
     private String Where_Zapchasti;
+    private String Kod_Otdelenie;
+    private String Name_Otdelenie;
+    private String Where_Otdelenie;
+
 
 
     /*public Long getId() {
@@ -141,6 +145,17 @@ public class database {
     public void setWhere_Zapchasti(String where_Zapchasti) {
         Where_Zapchasti = where_Zapchasti;}
 
+    public String getKod_Otdelenie(){return Kod_Otdelenie;}
+    public void setKod_Otdelenie(String kod_Otdelenie) {
+        Kod_Otdelenie= kod_Otdelenie;}
+
+    public String getName_Otdelenie(){return Name_Otdelenie;}
+    public void setName_Otdelenie(String name_Otdelenie){
+        Name_Otdelenie = name_Otdelenie;}
+
+    public String getWhere_Otdelenie() {return Where_Otdelenie;}
+    public void setWhere_Otdelenie(String where_Otdelenie) {
+        Where_Otdelenie = where_Otdelenie;}
 
 
 
@@ -150,7 +165,7 @@ public class database {
 
 
 
-
+/*
     public void setId(JTextField idField) {
     }
 
@@ -181,5 +196,5 @@ public class database {
 
 
     public void setname_Zapchasti(JTextField name_ZapchastiField) {}
-
+*/
 }

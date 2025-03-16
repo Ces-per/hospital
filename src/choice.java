@@ -1,5 +1,6 @@
 //import com.sun.org.apache.xpath.internal.functions.FuncFalse;
 import Table.Table_Aparat;
+import Table.Table_Otdelenie;
 import Table.Table_Zapchasti;
 
 import javax.swing.*;
@@ -13,7 +14,7 @@ import java.sql.*;
 public class choice extends JFrame{
     public choice() throws SQLException{
         //Создание окна
-        super("Запчясти");
+        super("Выбор таблицы");
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         //Подключение к базе данных и получение результсета таблицы
 
@@ -58,6 +59,22 @@ public class choice extends JFrame{
             }
         });
 
+        JButton Otdelenie = new JButton("Отдиление");
+        Otdelenie.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+                JFrame frame = new JFrame("Отделение");
+                Table_Otdelenie b = new Table_Otdelenie();
+                try {
+                    b.Table_Otdelenie(frame);
+                } catch (SQLException ex) {
+                    throw new RuntimeException(ex);
+                }
+
+            }
+        });
+
 
 
 
@@ -66,11 +83,12 @@ public class choice extends JFrame{
         JPanel Buttons = new JPanel();
         Buttons.add(Zapchasti);
         Buttons.add(Aparat);
+        Buttons.add(Otdelenie);
 
         //Оформление окна(добавление в него блока с таблице и панели кнопок, задача размера)
         getContentPane().add(contents);
-        getContentPane().add(Buttons/*, BorderLayout.CENTER*/);
-        setSize(800,400);
+        getContentPane().add(Buttons, BorderLayout.CENTER);
+        setSize(400,200);
         setVisible(true);
 
 

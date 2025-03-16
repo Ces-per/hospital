@@ -1,11 +1,12 @@
 package Table;
 //import com.sun.org.apache.xpath.internal.functions.FuncFalse;
 import dao.Converter;
-import dao.shange_Zapchasti;
+//import dao.shange_Aparat;
+import dao.shange_Otdelenie;
 
-import button.Zapchasti.create_button_Zapchasti;
-import button.Zapchasti.delet_button_Zapchasti;
-import button.Zapchasti.update_button_Zapchasti;
+import button.Otdelenie.create_button_Otdelenie;
+import button.Otdelenie.delet_button_Otdelenie;
+import button.Otdelenie.update_button_Otdelenie;
 
 import javax.swing.*;
 
@@ -15,19 +16,19 @@ import java.awt.event.ActionListener;
 
 import java.sql.*;
 
-public class Table_Zapchasti extends JFrame{
-    public void Table_Zapchasti(JFrame frame) throws SQLException{
+public class Table_Otdelenie extends JFrame{
+    public void Table_Otdelenie(JFrame frame) throws SQLException{
         //Создание окна
-        //super("Запчясти");
+        //super("Апараты");
         //setDefaultCloseOperation(EXIT_ON_CLOSE);
         //Подключение к базе данных и получение результсета таблицы
 
         Connection con = DriverManager.getConnection("jdbc:postgresql://127.0.0.1:5432/postgres", "postgres", "1");
         Statement stmt = con.createStatement();
-        ResultSet rs = stmt.executeQuery("SELECT id, \"Kod\", \"Name\", characteristics, photo\n" +
-                "\tFROM public.\"Zapchasti\";");
+        ResultSet rs = stmt.executeQuery("SELECT \"Kod\", \"Name\"\n" +
+                "\tFROM public.\"Otdelenie\";");
         //Создание таблицы и помещение в блок данных
-        shange_Zapchasti sh = new shange_Zapchasti();
+        shange_Otdelenie sh = new shange_Otdelenie();
         JTable table = new  JTable(Converter.buildTableModel(rs));
         table.setColumnSelectionAllowed(false);
         table.setRowSelectionAllowed(true);
@@ -44,8 +45,8 @@ public class Table_Zapchasti extends JFrame{
             @Override
             public void actionPerformed(ActionEvent e) {
 
-                JFrame frame = new JFrame("Добавить деталь");
-                create_button_Zapchasti b = new create_button_Zapchasti();
+                JFrame frame = new JFrame("добавить отделение");
+                create_button_Otdelenie b = new create_button_Otdelenie();
                 b.show(frame);
 
             }
@@ -56,8 +57,8 @@ public class Table_Zapchasti extends JFrame{
             @Override
             public void actionPerformed(ActionEvent e) {
 
-                JFrame uframe = new JFrame("изменить деталь");
-                update_button_Zapchasti ub = new update_button_Zapchasti();
+                JFrame uframe = new JFrame("изменить отделение");
+                update_button_Otdelenie ub = new update_button_Otdelenie();
                 ub.show(uframe);
             }
         });
@@ -67,8 +68,8 @@ public class Table_Zapchasti extends JFrame{
             @Override
             public void actionPerformed(ActionEvent e) {
 
-                JFrame dframe = new JFrame("удалить деталь");
-                delet_button_Zapchasti db = new delet_button_Zapchasti();
+                JFrame dframe = new JFrame("удалить ");
+                delet_button_Otdelenie db = new delet_button_Otdelenie();
                 db.show(dframe);
 
             }
@@ -78,7 +79,7 @@ public class Table_Zapchasti extends JFrame{
 
         recon.addActionListener(new ActionListener() {
             @Override
-            public void actionPerformed(ActionEvent e) {/*
+            public void actionPerformed(ActionEvent e) {
 
 
                 //setVisible(false);
@@ -91,10 +92,10 @@ public class Table_Zapchasti extends JFrame{
 
                     Connection con = DriverManager.getConnection("jdbc:postgresql://127.0.0.1:5432/postgres", "postgres", "1");
                     Statement stmt = con.createStatement();
-                    ResultSet rs = stmt.executeQuery("SELECT \"Siral_number\", \"Name\", registr_number, invent_number, \"Otdelenie\", data_input, \"Na_spisanie\", \"Act_spisanie\", \"Gurnal_TO\"\n" +
-                            "\tFROM public.\"Aparat\";");
+                    ResultSet rs = stmt.executeQuery("SELECT \"Kod\", \"Name\"\n" +
+                            "\tFROM public.\"Otdelenie\";");
                     //Создание таблицы и помещение в блок данных
-                    shange_student sh = new shange_student();
+                    shange_Otdelenie sh = new shange_Otdelenie();
                     JTable table = new  JTable(Converter.buildTableModel(rs));
                     table.setColumnSelectionAllowed(false);
                     table.setRowSelectionAllowed(true);
@@ -113,7 +114,7 @@ public class Table_Zapchasti extends JFrame{
 
                 setVisible(true);
 
-            */}
+            }
         });
 
 
@@ -128,14 +129,14 @@ public class Table_Zapchasti extends JFrame{
         //Оформление окна(добавление в него блока с таблице и панели кнопок, задача размера)
         getContentPane().add(contents);
         getContentPane().add(Buttons, BorderLayout.NORTH);
-        setSize(800,400);
+        setSize(400,350);
         setVisible(true);
 
 
     }
     public static void main(String[] args) throws Exception {
         //Запуск конструктора класса, образующего окно
-        new Table_Zapchasti();
+        new Table_Aparat();
     }
 }
 // добавтиь кнопку для повторнрого получения даных из таблици
