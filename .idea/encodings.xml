@@ -6,6 +6,10 @@
     <file url="file://$PROJECT_DIR$/src/Table/Table_Otdelenie.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/Table/Table_Zapchasti.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/button/Aparat/create_button_aparat.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/button/Otdelenie/create_button_Otdelenie.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/button/Otdelenie/delet_button_Otdelenie.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/button/Otdelenie/recon_botton_Otdelenie.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/button/Otdelenie/update_button_Otdelenie.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/buttonexample/BoxLayoutTest.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/choice.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/dao/shange_Zapchasti.java" charset="UTF-8" />

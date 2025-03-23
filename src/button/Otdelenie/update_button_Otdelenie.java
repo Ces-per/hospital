@@ -7,11 +7,9 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.Date;
 
-//import static com.sun.glass.ui.Cursor.setVisible;
-
-public class create_button_Otdelenie {
-
+public class update_button_Otdelenie{
     public void show(JFrame frame) {
 
         JPanel windowContent = new JPanel();
@@ -20,11 +18,8 @@ public class create_button_Otdelenie {
 
         // frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setContentPane(windowContent);
-        frame.setSize(300,350);
+        frame.setSize(350,535);
         frame.setVisible(true);
-
-
-
 
         JLabel Kod_Otdelenie = new JLabel("Код");
         frame.add(Kod_Otdelenie);
@@ -48,20 +43,30 @@ public class create_button_Otdelenie {
 
 
 
+        JLabel where_id = new JLabel("В каком ID");
+        frame.add(where_id);
+        where_id.setSize(100,20);
+        where_id.setVisible(true);
+        JTextField where_field = new JTextField(25);
+        where_field.setToolTipText("Введите ID");
+        frame.add(where_field);
+        where_field.setSize(100,20);
+        where_field.setVisible(true);
 
 
-
-
-        JButton add = new JButton("Добавить");
-        add.addActionListener(new ActionListener() {
+        JButton up = new JButton("Обнавить");
+        up.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 database st = new database();
                 st.setKod_Otdelenie(Kod_Otdelenie_field.getText());
                 st.setName_Otdelenie(Name_Otdelenie_field.getText());
-                new shange_Otdelenie().createOtdelenie(st);
+                st.setWhere_Otdelenie(String.valueOf(where_field.getText()));
+
+                int i = new shange_Otdelenie().updateOtdelenie(st);
+                System.out.println(i);
             }
         });
 
-        windowContent.add(add);
+        windowContent.add(up);
     }
 }
