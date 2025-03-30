@@ -20,12 +20,12 @@ public class delet_button_Otdelenie {
         frame.setSize(310,400);
         frame.setVisible(true);
 
-        JLabel where_id = new JLabel("В каком Id");
+        JLabel where_id = new JLabel("В каком Kod");
         frame.add(where_id);
         where_id.setSize(100,20);
         where_id.setVisible(true);
         JTextField where_field = new JTextField(25);
-        where_field.setToolTipText("Введите id");
+        where_field.setToolTipText("Введите Kod");
         frame.add(where_field);
         where_field.setSize(100,20);
         where_field.setVisible(true);

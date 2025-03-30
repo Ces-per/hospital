@@ -18,7 +18,7 @@ public class shange_Otdelenie {
 
         Statement stmt = con.createStatement();
         ResultSet rs = stmt.executeQuery("SELECT *\n" +
-                "\tFROM public.\"ученики\";");
+                "\tFROM public.\"СѓС‡РµРЅРёРєРё\";");
             while (rs.next()){
                 student st = new student();
                 st.setId(rs.getLong(1));
@@ -33,7 +33,7 @@ public class shange_Otdelenie {
         }
         catch (Exception e){}
             return result;
-    } // Вывод*/
+    } // Р’С‹РІРѕРґ*/
 
     /*public ResultSet selctstudent(){
         try{
@@ -48,7 +48,7 @@ public class shange_Otdelenie {
     }*/
 
     public int createOtdelenie(database database) {
-        try {////блок кода, в котором может произойти исключение
+        try {////Р±Р»РѕРє РєРѕРґР°, РІ РєРѕС‚РѕСЂРѕРј РјРѕР¶РµС‚ РїСЂРѕРёР·РѕР№С‚Рё РёСЃРєР»СЋС‡РµРЅРёРµ
             String sql = "INSERT INTO public.\"Otdelenie\"(\n" +
                     "\t\"Kod\", \"Name\")\n" +
                     "\tVALUES (?, ?);";
@@ -57,12 +57,12 @@ public class shange_Otdelenie {
             statement.setString(2, database.getName_Otdelenie());
 
             int i = statement.executeUpdate();
-            System.out.println("Добавлено строк " + i);
+            System.out.println("Р”РѕР±Р°РІР»РµРЅРѕ СЃС‚СЂРѕРє " + i);
             return i;
         }
         catch (Exception e){}
         return 0;
-    } // Добавление
+    } // Р”РѕР±Р°РІР»РµРЅРёРµ
 
     public int updateOtdelenie(database database) {
         try {
@@ -76,9 +76,10 @@ public class shange_Otdelenie {
             statement.setString(1, database.getKod_Otdelenie());
             statement.setString(2, database.getName_Otdelenie());
             statement.setString(3,database.getWhere_Otdelenie());
+            //statement.setInt();
 
             int i =  statement.executeUpdate();
-            System.out.println("Обновлено строк " + i);
+            System.out.println("РћР±РЅРѕРІР»РµРЅРѕ СЃС‚СЂРѕРє " + i);
 
         } catch (Exception e){}
         return 0;
@@ -94,7 +95,7 @@ public class shange_Otdelenie {
             PreparedStatement statement = getConnection().prepareStatement(sqlUpdate);
             statement.setString(1, database.getWhere_Otdelenie());
             int i =  statement.executeUpdate();
-            System.out.println("удолено строк строк " + i);
+            System.out.println("СѓРґРѕР»РµРЅРѕ СЃС‚СЂРѕРє СЃС‚СЂРѕРє " + i);
 
         } catch (Exception e){}
         return 0;

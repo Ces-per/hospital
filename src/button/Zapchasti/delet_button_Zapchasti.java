@@ -34,7 +34,7 @@ public class delet_button_Zapchasti {
         up.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 database st = new database();
-                st.setWhere_Zapchasti(String.valueOf(where_field.getText()));
+                st.setWhere_Zapchasti(Integer.valueOf(where_field.getText()));
                 int i = new shange_Aparat().deletStudent(st);
             }
         });

@@ -1,6 +1,5 @@
 package entity;
 
-import javax.swing.*;
 import java.sql.Date;
 
 public class database {
@@ -23,12 +22,12 @@ public class database {
     private String Act_spisanie_Aparat;
     private String Gurnal_TO_Aparat;
     private String Where_Aparat;
-    private String Kod_Zapchasti;
+    private Integer Kod_Zapchasti;
     private String Name_Zapchasti;
     private String Characteristics_Zapchasti;
     private String Photo_Zapchasti;
-    private String Id_Zapchasti;
-    private String Where_Zapchasti;
+    private Integer Id_Zapchasti;
+    private Integer Where_Zapchasti;
     private String Kod_Otdelenie;
     private String Name_Otdelenie;
     private String Where_Otdelenie;
@@ -121,8 +120,8 @@ public class database {
     public void setWhere_Aparat(String where_Aparat) {
         Where_Aparat = where_Aparat;}
 
-    public String getKod_Zapchasti() {return Kod_Zapchasti;}
-    public void setKod_Zapchasti(String kod_Zapchasti){
+    public int getKod_Zapchasti() {return Kod_Zapchasti;}
+    public void setKod_Zapchasti(Integer kod_Zapchasti){
         Kod_Zapchasti = kod_Zapchasti;}
 
     public String getName_Zapchasti() {return Name_Zapchasti;}
@@ -137,12 +136,12 @@ public class database {
     public void setPhoto_Zapchasti(String photo_Zapchasti) {
         Photo_Zapchasti = photo_Zapchasti;}
 
-    public String getId_Zapchasti() {return Id_Zapchasti;}
-    public void setId_Zapchasti(String id_Zapchasti) {
+    public int getId_Zapchasti() {return Id_Zapchasti;}
+    public void setId_Zapchasti(Integer id_Zapchasti) {
         Id_Zapchasti = id_Zapchasti;}
 
-    public String getWhere_Zapchasti() {return Where_Zapchasti;}
-    public void setWhere_Zapchasti(String where_Zapchasti) {
+    public int getWhere_Zapchasti() {return Where_Zapchasti;}
+    public void setWhere_Zapchasti(Integer where_Zapchasti) {
         Where_Zapchasti = where_Zapchasti;}
 
     public String getKod_Otdelenie(){return Kod_Otdelenie;}

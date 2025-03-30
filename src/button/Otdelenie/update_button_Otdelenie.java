@@ -18,7 +18,7 @@ public class update_button_Otdelenie{
 
         // frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setContentPane(windowContent);
-        frame.setSize(350,535);
+        frame.setSize(310,335);
         frame.setVisible(true);
 
         JLabel Kod_Otdelenie = new JLabel("Код");
@@ -43,12 +43,12 @@ public class update_button_Otdelenie{
 
 
 
-        JLabel where_id = new JLabel("В каком ID");
+        JLabel where_id = new JLabel("В каком Kod");
         frame.add(where_id);
         where_id.setSize(100,20);
         where_id.setVisible(true);
         JTextField where_field = new JTextField(25);
-        where_field.setToolTipText("Введите ID");
+        where_field.setToolTipText("Введите Kod");
         frame.add(where_field);
         where_field.setSize(100,20);
         where_field.setVisible(true);

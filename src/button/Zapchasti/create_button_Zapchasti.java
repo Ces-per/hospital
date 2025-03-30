@@ -85,11 +85,11 @@ public class create_button_Zapchasti {
         add.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 database st = new database();
-                st.setKod_Zapchasti(Kod_field.getText());
+                st.setKod_Zapchasti(Integer.valueOf(Kod_field.getText()));
                 st.setName_Zapchasti(Name_Zapchasti_field.getText());
                 st.setCharacteristics_Zapchasti(Characteristics_field.getText());
                 st.setPhoto_Zapchasti(Photo_field.getText());
-                st.setId_Zapchasti(Id_Zapchasti_field.getText());
+                st.setId_Zapchasti(Integer.valueOf(Id_Zapchasti_field.getText()));
                 new shange_Zapchasti().createZapchasti(st);
             }
         });

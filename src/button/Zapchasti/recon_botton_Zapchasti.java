@@ -7,7 +7,7 @@ import javax.swing.*;
 import java.sql.SQLException;
 
 
-public class recon_botton_Zapchasti {
+public class recon_botton_Zapchasti {/*
     public void show(Box contents){
 
 
@@ -25,4 +25,5 @@ public class recon_botton_Zapchasti {
         contents.add(new JScrollPane(table1));
         System.out.println("Обновлено строк ");
     }
+    */
 }

@@ -81,8 +81,8 @@ public class choice extends JFrame{
 
 
         JPanel Buttons = new JPanel();
-        Buttons.add(Zapchasti);
         Buttons.add(Aparat);
+        Buttons.add(Zapchasti);
         Buttons.add(Otdelenie);
 
         //Оформление окна(добавление в него блока с таблице и панели кнопок, задача размера)

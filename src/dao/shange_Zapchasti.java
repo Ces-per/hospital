@@ -53,11 +53,11 @@ public class shange_Zapchasti {
                     "\t\"Kod\", \"Name\", characteristics, photo, id)\n" +
                     "\tVALUES (?, ?, ?, ?, ?);";
             PreparedStatement statement = getConnection().prepareStatement(sql);
-            statement.setString(1, database.getKod_Zapchasti());
+            statement.setInt(1, database.getKod_Zapchasti());
             statement.setString(2, database.getName_Zapchasti());
             statement.setString(3, database.getCharacteristics_Zapchasti());
             statement.setString(4, database.getPhoto_Zapchasti());
-            statement.setString(5, database.getId_Zapchasti());
+            statement.setInt(5, database.getId_Zapchasti());
             /*statement.setDate(6, database.getData_input_Aparat());
             statement.setBoolean(7, database.getNa_spisanie_Aparat());
             statement.setString(8, database.getAct_spisanie_Aparat());
@@ -79,12 +79,12 @@ public class shange_Zapchasti {
                     "\tSET \"Kod\"=?, \"Name\"=?, characteristics=?, photo=?, id=?\n" +
                     "\tWHERE id=?;";
             PreparedStatement statement = getConnection().prepareStatement(sqlUpdate);
-            statement.setString(1, database.getKod_Zapchasti());
+            statement.setInt(1, database.getKod_Zapchasti());
             statement.setString(2, database.getName_Zapchasti());
             statement.setString(3, database.getCharacteristics_Zapchasti());
             statement.setString(4, database.getPhoto_Zapchasti());
-            statement.setString(5, database.getId_Zapchasti());
-            statement.setString(6,database.getWhere_Zapchasti());
+            statement.setInt(5, database.getId_Zapchasti());
+            statement.setInt(6,database.getWhere_Zapchasti());
 
             int i =  statement.executeUpdate();
             System.out.println("Обновлено строк " + i);
@@ -101,7 +101,7 @@ public class shange_Zapchasti {
             String sqlUpdate="DELETE FROM public.\"Zapchasti\"\n" +
                     "\tWHERE id=?;";
             PreparedStatement statement = getConnection().prepareStatement(sqlUpdate);
-            statement.setString(1, database.getWhere_Zapchasti());
+            statement.setInt(1, database.getWhere_Zapchasti());
             int i =  statement.executeUpdate();
             System.out.println("удолено строк строк " + i);
 

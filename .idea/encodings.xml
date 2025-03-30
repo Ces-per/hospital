@@ -12,7 +12,9 @@
     <file url="file://$PROJECT_DIR$/src/button/Otdelenie/update_button_Otdelenie.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/buttonexample/BoxLayoutTest.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/choice.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/dao/shange_Otdelenie.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/dao/shange_Zapchasti.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/entity/database.java" charset="UTF-8" />
     <file url="PROJECT" charset="windows-1251" />
   </component>
 </project>
