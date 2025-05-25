@@ -136,7 +136,7 @@ public class Table_Otdelenie extends JFrame{
     }
     public static void main(String[] args) throws Exception {
         //Запуск конструктора класса, образующего окно
-        new Table_Aparat();
+        new Table_Otdelenie();
     }
 }
 // добавтиь кнопку для повторнрого получения даных из таблици

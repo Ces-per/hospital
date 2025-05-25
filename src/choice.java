@@ -1,6 +1,7 @@
 //import com.sun.org.apache.xpath.internal.functions.FuncFalse;
 import Table.Table_Aparat;
 import Table.Table_Otdelenie;
+import Table.Table_Remont;
 import Table.Table_Zapchasti;
 
 import javax.swing.*;
@@ -76,6 +77,23 @@ public class choice extends JFrame{
         });
 
 
+        JButton Remont = new JButton("Ремонт");
+        Remont.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+                JFrame frame = new JFrame("Ремонт");
+                Table_Remont b = new Table_Remont();
+                try {
+                    b.Table_Remont(frame);
+                } catch (SQLException ex) {
+                    throw new RuntimeException(ex);
+                }
+
+            }
+        });
+
+
 
 
 
@@ -84,6 +102,7 @@ public class choice extends JFrame{
         Buttons.add(Aparat);
         Buttons.add(Zapchasti);
         Buttons.add(Otdelenie);
+        Buttons.add(Remont);
 
         //Оформление окна(добавление в него блока с таблице и панели кнопок, задача размера)
         getContentPane().add(contents);

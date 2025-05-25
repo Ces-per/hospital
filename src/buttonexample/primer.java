@@ -1,46 +1,71 @@
-/*package buttonexample;
+package buttonexample;// Пример использования раскрывающихся списков
 
-import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.*;
 
-public class primer extends JFrame {
+import javax.swing.*;
+
+public class primer extends JFrame
+{
+    private static final long serialVersionUID = 1L;
+    // Массив элементов списка
+    public String[] elements = new String[] {"Офис", "Склад", "Гараж",
+            "Производство", "Столовая"};
+
+    private JComboBox<String> cbFirst;
+    private DefaultComboBoxModel<String> cbModel;
+
     public primer() {
-        setTitle("Главное окно");
-        setSize(300, 200);
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setLocationRelativeTo(null);
+        super("Пример JComboBox");
+        setDefaultCloseOperation(EXIT_ON_CLOSE);
 
-        JButton openButton = new JButton("Открыть форму");
-        openButton.addActionListener(new ActionListener() {
-            @Override
+        // Модель данных списка
+        cbModel = new DefaultComboBoxModel<String>();
+        for (int i = 0; i < elements.length; i++)
+            cbModel.addElement((String)elements[i]);
+        // Данные для 2-го списка
+        Vector<String> data = new Vector<String>();
+        for (int i = 0; i < 10; i++)
+            data.add(String.format("#%d элемент", i));
+        // 1-й раскрывающийся список
+        cbFirst = new JComboBox<String>(cbModel);
+        // Меняем элемент Гараж на Автопарк
+        cbModel.setSelectedItem("Гараж");
+        int idx = cbModel.getIndexOf(cbModel.getSelectedItem());
+        cbModel.removeElementAt(idx);
+        cbModel.insertElementAt("Автопарк", idx);
+        cbModel.setSelectedItem("Автопарк");
+        // Определяем размер списка
+        cbFirst.setPrototypeDisplayValue("Максимальный размер");
+        // 2-й раскрывающийся список
+        JComboBox<String> cbSecond = new JComboBox<String>(data);
+        /*
+         *  Определение свойств списка - редактируемый, количество
+         *  элементов в раскрывающемся окне
+         */
+        cbSecond.setEditable(true);
+        cbSecond.setMaximumRowCount(5);
+        // Кнопка добавления элемента в модель данных
+        JButton btnAdd = new JButton("Добавить");
+        btnAdd.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                // Создаем и показываем новое окно
-                Table.Table newForm = new Table.Table();
-                newForm.setVisible(true);
+                // Выбираем позицию предпоследнего элемента
+                int pos = cbModel.getSize() - 1;
+                cbModel.insertElementAt("~ Добавленная строка ~", pos);
             }
         });
 
-        add(openButton);
+        // Размещение компонентов в интерфейсе и вывод окна
+        JPanel contents = new JPanel();
+        contents.add  (cbSecond);
+        contents.add  (cbFirst );
+        contents.add  (btnAdd  );
+        setContentPane(contents);
+        setSize(450, 180);
+        setVisible(true);
     }
-
     public static void main(String[] args) {
-        SwingUtilities.invokeLater(() -> {
-            primer mainFrame = new primer();
-            mainFrame.setVisible(true);
-        });
+        new primer();
     }
 }
-
-class NewForm extends JFrame {
-    public NewForm() {
-        setTitle("Новая форма");
-        setSize(200, 150);
-        setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-        setLocationRelativeTo(null);
-
-        JLabel label = new JLabel("Это новая форма");
-        add(label);
-    }
-}
-*/
